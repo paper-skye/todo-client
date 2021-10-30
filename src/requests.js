@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = process.env.API_URL || "http://localhost:6969";
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:6969";
 
 export async function login(loginDTO) {
 	return axios.post(`${API_URL}/login`, loginDTO, {withCredentials: true});
