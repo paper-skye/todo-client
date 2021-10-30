@@ -7,7 +7,7 @@
     overflow-y: scroll;
 }
 
-.todo {
+.todo div {
     display: flex;
     align-items: center;
     justify-content: space-between;
