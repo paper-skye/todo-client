@@ -1,0 +1,80 @@
+* {
+    box-sizing: inherit;
+}
+
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+input[type="text"], input[type="password"] {
+    border-radius: 8px;
+    border: none;
+    background-color: #eeeeee;
+    padding: 8px;
+
+    transition: .3s ease-in-out;
+}
+
+input[type="text"]:hover, input[type="password"]:hover {
+    background-color: #e0e0e0;
+}
+
+.form-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input {
+    margin-bottom: 8px;
+}
+
+.button {
+    border: none;
+    padding: 5px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    margin: 5px 10px;
+}
+
+.button-main {
+    background-color: #c05119;
+    color: white;
+}
+
+.button-main:hover {
+    background-color: #a74616;
+}
+
+.button-main:disabled {
+    background-color: #b34c1867;
+    cursor: default;
+}
+
+.button-link {
+    background-color: white;
+    color: black;
+}
+
+.button-link:hover {
+    background-color: #eeeeee;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.button-delete {
+    background-color: red;
+    color: white;
+}
+
+.button-delete:hover {
+    background-color: rgb(212, 1, 1);
+}
+
+.error-message {
+    color: red;
+}
