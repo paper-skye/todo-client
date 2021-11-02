@@ -4,8 +4,6 @@ import Login from "./components/login";
 import { getTodos, logout, me, postTodo, deleteTodo, patchTodo } from "./requests";
 import React, { useEffect, useState } from "react";
 
-import "./styles/shared.css";
-
 function App() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);

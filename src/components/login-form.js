@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import { login } from "../requests";
-import "../styles/shared.css";
 import "../styles/login.css";
 import {func} from "prop-types";
 
