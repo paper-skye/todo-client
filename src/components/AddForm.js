@@ -5,6 +5,7 @@ const AddForm = ({createTodo}) => {
 	const [task, setTask] = useState("");
 
 	return <form
+		className="AddForm"
 		onSubmit={(e) => {
 			e.preventDefault();
 			createTodo({task});
@@ -18,7 +19,7 @@ const AddForm = ({createTodo}) => {
 		/>
 		<input
 			type="submit"
-			className="button button-main"
+			className="btn btn-main"
 			value="Add"
 			disabled={!task} />
 	</form>;

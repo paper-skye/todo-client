@@ -1,6 +1,6 @@
-import AddForm from "./components/add-form";
-import TodoList from "./components/todo-list";
-import Login from "./components/login";
+import AddForm from "./components/AddForm";
+import TodoList from "./components/TodoList";
+import Login from "./components/Login";
 import { getTodos, logout, me, postTodo, deleteTodo, patchTodo } from "./requests";
 import React, { useEffect, useState } from "react";
 
@@ -110,7 +110,7 @@ function App() {
 	}, [user]);
 
 	return (
-		<div className="fullscreen">
+		<div className="App">
 			{loading ? <p>loading...</p>
 				:
 				user ? <>
@@ -120,11 +120,14 @@ function App() {
 					<span className="error-message">{error}</span>
 					<AddForm
 						createTodo={createTodoHandler} />
-					<TodoList todos={todos}
-						updateTodo={updateTodoHandler}
-						deleteTodo={deleteTodoHandler} />
+					<hr />
+					<div className="todo-list-container">
+						<TodoList todos={todos}
+							updateTodo={updateTodoHandler}
+							deleteTodo={deleteTodoHandler} />
+					</div>
 					<input type="button"
-						className="button button-link"
+						className="btn btn-link"
 						value="logout"
 						onClick={() => {
 							logout()

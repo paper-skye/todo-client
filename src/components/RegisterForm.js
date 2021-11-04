@@ -1,23 +1,28 @@
+import { func } from "prop-types";
 import React, {useState} from "react";
-import { login } from "../requests";
-import "../styles/login.css";
-import {func} from "prop-types";
+import { register } from "../requests";
 
-const LoginForm = ({setUser, setRegister}) => {
+const RegisterForm = ({setUser, setLogin}) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [displayName, setDisplayName] = useState("");
 	const [error, setError] = useState(null);
 
 	return (
-		<div className="fullscreen">
-			<h1>Login</h1>
+		<>
+			<h1>Register</h1>
 
 			<form
-				className="form-center"
+				className="auth-form"
 				onSubmit={(e) => {
 					e.preventDefault();
-					login({email, password})
+
+					register({displayName, email, password})
 						.then(response => {
+							setEmail("");
+							setPassword("");
+							setDisplayName("");
+
 							setUser(response.data);
 						})
 						.catch(error => {
@@ -28,16 +33,14 @@ const LoginForm = ({setUser, setRegister}) => {
 
 							console.error(error.message);
 						});
-
-					setEmail("");
-					setPassword("");
 				}}>
 				<input
-					type="text"
+					type="email"
 					placeholder="email"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
+
 				<input
 					type="password"
 					placeholder="password"
@@ -45,21 +48,27 @@ const LoginForm = ({setUser, setRegister}) => {
 					onChange={(e) => setPassword(e.target.value)}
 				/>
 
-				<input type="button" value="register instead"
-					className="button button-link underline"
-					onClick={() => setRegister()} />
+				<input
+					type="text"
+					placeholder="display name"
+					value={displayName}
+					onChange={(e) => setDisplayName(e.target.value)}
+				/>
+				<input type="button" value="login instead"
+					className="btn btn-link"
+					onClick={() => setLogin()} />
 				<input type="submit"
-					className="button button-main" value="login" />
+					className="btn btn-main" value="register" />
 			</form>
 			<br />
 			<span className="error-message">{error}</span>
-		</div>
+		</>
 	);
 };
 
-LoginForm.propTypes = {
+RegisterForm.propTypes = {
 	setUser: func,
-	setRegister: func
+	setLogin: func
 };
 
-export default LoginForm;
+export default RegisterForm;

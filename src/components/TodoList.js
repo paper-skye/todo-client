@@ -1,10 +1,9 @@
-import Todo from "./todo";
+import Todo from "./Todo";
 import React from "react";
-import "../styles/todo-list.css";
 import { array, func } from "prop-types";
 
 const TodoList = ({todos, updateTodo, deleteTodo}) => {
-	return <div className="todo-list">
+	return <div className="TodoList">
 		{todos.map(todo =>
 			<Todo key={todo.id}
 				todo={todo}
