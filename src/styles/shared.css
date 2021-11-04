@@ -28,6 +28,7 @@ input[type="text"], input[type="password"], input[type="email"] {
     border: none;
     background-color: #eeeeee;
     margin: 5px 0;
+    transition: all .3s ease-in-out;
 }
 
 .App {
@@ -118,6 +119,11 @@ input[type="text"], input[type="password"], input[type="email"] {
 @media only screen and (min-width: 769px) {
     hr {
         width: 50vw;
+    }
+    input[type="text"]:hover,
+    input[type="password"]:hover,
+    input[type="email"]:hover {
+        background-color: #e0e0e0;
     }
 
     .TodoList {
