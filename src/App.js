@@ -111,7 +111,7 @@ function App() {
 
 	return (
 		<div className="App">
-			{loading ? <p>loading...</p>
+			{loading ? <div className="loading">loading...</div>
 				:
 				user ? <>
           
