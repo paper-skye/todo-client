@@ -44,13 +44,13 @@ const LoginForm = ({setUser, setRegister}) => {
 					onChange={(e) => setPassword(e.target.value)}
 				/>
 
-				<input type="button" value="register instead"
-					className="btn btn-link"
-					onClick={() => setRegister()} />
 				<input type="submit"
-					className="btn btn-main" value="login" />
+					className="btn btn-main" value="Login" />
 			</form>
 			<br />
+			<input type="button" value="I don't have an account"
+				className="btn btn-link"
+				onClick={() => setRegister()} />
 			<span className="error-message">{error}</span>
 		</>
 	);

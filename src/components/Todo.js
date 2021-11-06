@@ -14,14 +14,14 @@ const Todo = ({todo, updateTodo, deleteTodo}) => {
 					onChange={(e) => setEditText(e.target.value)}
 				/>
 				<div>
-					<input type="button" value="cancel"
+					<input type="button" value="Cancel"
 						className="btn btn-plain"
 						onClick={() => {
 							setEditText(taskText);
 							setIsEditing(false);
 						}}
 					/>
-					<input type="button" value="update"
+					<input type="button" value="Update"
 						className="btn btn-main"
 						onClick={() => {
 							updateTodo({...todo, task: editText});

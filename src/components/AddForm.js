@@ -20,7 +20,7 @@ const AddForm = ({createTodo}) => {
 		<input
 			type="submit"
 			className="btn btn-main"
-			value="Add"
+			value="&#43;"
 			disabled={!task} />
 	</form>;
 };

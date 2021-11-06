@@ -12,6 +12,8 @@ const RegisterForm = ({setUser, setLogin}) => {
 		<>
 			<h1>Register</h1>
 
+			<br />
+			<span className="error-message">{error}</span>
 			<form
 				className="auth-form"
 				onSubmit={(e) => {
@@ -54,14 +56,13 @@ const RegisterForm = ({setUser, setLogin}) => {
 					value={displayName}
 					onChange={(e) => setDisplayName(e.target.value)}
 				/>
-				<input type="button" value="login instead"
-					className="btn btn-link"
-					onClick={() => setLogin()} />
+
 				<input type="submit"
-					className="btn btn-main" value="register" />
+					className="btn btn-main" value="Register" />
 			</form>
-			<br />
-			<span className="error-message">{error}</span>
+			<input type="button" value="I already have an account"
+				className="btn btn-link"
+				onClick={() => setLogin()} />
 		</>
 	);
 };

@@ -110,17 +110,16 @@ function App() {
 	}, [user]);
 
 	return (
-		<div className="App">
+		<div className="App centered">
 			{loading ? <div className="loading">loading...</div>
 				:
 				user ? <>
           
-					<h1>{user.displayName}&apos;s list</h1>
+					<h1>{user.displayName[0].toUpperCase() + user.displayName.substring(1)}&apos;s List</h1>
           
 					<span className="error-message">{error}</span>
 					<AddForm
 						createTodo={createTodoHandler} />
-					<hr />
 					<div className="todo-list-container">
 						<TodoList todos={todos}
 							updateTodo={updateTodoHandler}
@@ -128,7 +127,7 @@ function App() {
 					</div>
 					<input type="button"
 						className="btn btn-link"
-						value="logout"
+						value="Logout"
 						onClick={() => {
 							logout()
 								.then(() => {
